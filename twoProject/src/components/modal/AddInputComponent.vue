@@ -46,7 +46,7 @@ export default {
       if (index !== -1) {
         if( this.dynamicValidateForm.domains.length<2){
             this.$message({
-                message:'只剩下一条,不能删除',
+                message:'只剩下一条数据,不能删除',
                 type:'warning'
             });
             return
