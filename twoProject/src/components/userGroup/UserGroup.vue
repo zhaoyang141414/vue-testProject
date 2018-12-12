@@ -78,7 +78,7 @@ export default {
           label:'区域一'
         },
         {
-          value:'北京',
+          value:'beijing',
           label:'区域二'
         }
       ]
