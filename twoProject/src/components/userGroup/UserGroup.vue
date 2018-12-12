@@ -1,7 +1,7 @@
 <template>
 <div>
     <el-form :label-position="labelPosition" label-width="80px" :model="formLabelAlign">
-        <el-row type="flex" class="row-bg" justify="space-around" gutter="48">
+        <el-row type="flex" class="row-bg" justify="space-around">
             <el-col :span="8">
                 <el-form-item label="名称">
                     <el-input v-model="formLabelAlign.name"></el-input>
@@ -18,17 +18,21 @@
                 </el-form-item>
             </el-col>
         </el-row>
-        <el-row gutter="48" class="row-bg">
+        <el-row class="row-bg">
           <el-col :span="8">
-              <el-form-item label="活动区域">
-                <el-select v-model="formLabelAlign.region" placeholder="请选择活动区域">
+              <el-form-item label="活动范围">
+                <el-select
+                 v-model="formLabelAlign.regionZone"
+                 placeholder="请选择活动区域"
+                 style="width:100%" 
+                  >
                   <el-option label="区域一" value="shanghai"></el-option>
                   <el-option label="区域二" value="beijing"></el-option>
                 </el-select>
               </el-form-item>
           </el-col>
         </el-row>
-        <el-row gutter="48">
+        <el-row>
           <el-col :span="6">
             <el-button type="primary" @click.native.prevent="_submit">提交</el-button>
           </el-col>
@@ -60,7 +64,7 @@ export default {
         name: "",
         region: "",
         type: "",
-        region:"",
+        regionZone:"",
       }
     };
   },
