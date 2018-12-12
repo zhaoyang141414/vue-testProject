@@ -20,7 +20,7 @@
         </el-row>
         <el-row class="row-bg">
           <el-col :span="8">
-              <el-form-item label="活动范围1">
+              <el-form-item label="活动范围">
                 <el-select
                  v-model="formLabelAlign.regionZone"
                  placeholder="请选择活动区域"
