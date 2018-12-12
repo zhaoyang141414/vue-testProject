@@ -26,8 +26,14 @@
                  placeholder="请选择活动区域"
                  style="width:100%" 
                   >
-                  <el-option label="区域一" value="shanghai"></el-option>
-                  <el-option label="区域二" value="beijing"></el-option>
+                  <el-option
+                    v-for="item in activeZoneData"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value"
+                  ></el-option>
+                  <!-- <el-option label="区域一" value="shanghai"></el-option>
+                  <el-option label="区域二" value="beijing"></el-option> -->
                 </el-select>
               </el-form-item>
           </el-col>
@@ -64,8 +70,18 @@ export default {
         name: "",
         region: "",
         type: "",
-        regionZone:"",
-      }
+        regionZone:"shanghai",
+      },
+      activeZoneData:[
+        {
+          value:'shanghai',
+          label:'区域一'
+        },
+        {
+          value:'北京',
+          label:'区域二'
+        }
+      ]
     };
   },
   methods: {
