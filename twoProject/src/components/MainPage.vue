@@ -21,18 +21,20 @@
               router
               >
       <el-submenu index="1">
-        <template slot="title">
-          <i class="el-icon-message"></i>
-            用户组
+          <template slot="title">
+              <i class="el-icon-message"></i>
+            用户操作
           </template>
-          <el-menu-item index="/main/userInfo">
-            用户详情
-            <!-- <router-link to="/main/userInfo" tag="li">用户详情</router-link> -->
+              <el-menu-item index="/main/userInfo">
+                    用户详情
+                <!-- <router-link to="/main/userInfo" tag="li">用户详情</router-link> -->
+                </el-menu-item>
+              <el-menu-item index="/main/userGroup">
+                    用户组
+                </el-menu-item>
+              <el-menu-item index="/main/userForm">
+                    用户提交
             </el-menu-item>
-          <el-menu-item index="/main/userGroup">
-              用户组
-            </el-menu-item>
-          <el-menu-item index="1-3">选项3</el-menu-item>
       </el-submenu>
       <el-submenu index="2">
         <template slot="title"><i class="el-icon-menu"></i>导航二</template>

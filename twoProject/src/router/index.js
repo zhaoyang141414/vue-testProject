@@ -2,6 +2,8 @@ import Login from '../components/Login'
 import main from '../components/MainPage'
 import userInfo from '../components/userInfo/UserInfo'
 import userGroup from '../components/userGroup/UserGroup'
+// import userForm from '../components/userForm/UserForm'
+import userForm from '../components/modal/AddInputComponent'
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
@@ -32,6 +34,11 @@ export default new VueRouter({
           path: '/main/userGroup',
           name: 'UserGroup',
           component: userGroup
+        },
+        {
+          path: '/main/userForm',
+          name: 'UserForm',
+          component: userForm
         },
       ]
     },
