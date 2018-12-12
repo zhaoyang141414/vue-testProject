@@ -28,6 +28,9 @@ module.exports = {
       {
         test: /\.css$/,
         loader: 'style-loader!css-loader',
+        include:[
+          'src/sass'
+        ],
         exclude: /node_modules/
       },
       {
