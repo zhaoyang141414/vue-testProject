@@ -10,6 +10,7 @@
 </template>
 <script>
 import userForm from "../modal/AddInputComponent";
+import store from '../store/Store';
 export default {
   name: "UserForm",
   components: {
@@ -17,7 +18,10 @@ export default {
   },
   methods: {
     _submit() {
-      console.log("点击了", this.data);
+      console.log("点击获取vuex的值",store.state.user,'子组件传过来的值',this.data);
+      var sendData = 456;
+      // store.commit('changeData',this.data); // 调用VueX的mutations方法
+       store.dispatch('changeData',sendData);
     },
     // 监听获取子组件传过来的值
     childClose(childValue){
