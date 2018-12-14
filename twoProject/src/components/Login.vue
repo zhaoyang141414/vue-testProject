@@ -56,7 +56,7 @@ export default {
     handleSubmit2(ruleForm2) {
       this.$refs.ruleForm2.validate(valid => {
         if (valid) {
-          alert("提交！");
+          alert("登录成功");
           router.push({path:'/main'});
           console.log(Config,'configFile')
 

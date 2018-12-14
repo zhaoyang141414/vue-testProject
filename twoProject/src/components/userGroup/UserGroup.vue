@@ -84,9 +84,13 @@ export default {
       ]
     };
   },
+   beforeCreate(){
+    console.log('创建前状态'); 
+   },
   methods: {
     _submit() {
       console.log(this.formLabelAlign);
+      this.tools.$emit('tips',{show:true,title:'提交成功'})
     }
   }
 };

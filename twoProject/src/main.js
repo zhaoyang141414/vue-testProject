@@ -7,6 +7,7 @@ import router from './router/index'
 import './sass/common.css'
 
 Vue.config.productionTip = false;
+Vue.prototype.tools = new Vue;
 
 Vue.use(ElementUI);
 Vue.use(VueRouter);

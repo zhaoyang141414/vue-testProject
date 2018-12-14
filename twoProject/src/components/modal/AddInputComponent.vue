@@ -17,6 +17,7 @@
                     <el-button @click.native.prevent="removeDomain(domain)">删除</el-button>
                 </el-form-item>
                     <el-form-item>
+                        <el-button @click="getData">数据</el-button>
                         <el-button @click="addDomain">新增</el-button>
                         <el-button @click="resetForm('dynamicValidateForm')">重置</el-button>
                     </el-form-item>    
@@ -39,6 +40,8 @@ export default {
       }
     };
   },
+  // 父组件传递的数据
+  props:['message'],
   methods: {
     // 点击删除按钮
     removeDomain(item) {
@@ -69,6 +72,11 @@ export default {
     //   }]
     //   this.dynamicValidateForm.domains = resetArr;
     },
+    getData(){
+      console.log(this.dynamicValidateForm.domains,'填入的数据')
+      console.log(this.message,'父组件传过来的值')
+      this.$emit('childClose',this.dynamicValidateForm.domains);
+    }
   }
 };
 </script>
