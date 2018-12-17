@@ -3,24 +3,24 @@
       <el-form :label-position="labelPosition" label-width="80px" :model="formLabelAlign">
           <el-row type="flex" class="row-bg" justify="space-around">
               <el-col :span="8">
-                  <el-form-item label="名称">
-                      <el-input v-model="formLabelAlign.name"></el-input>
+                  <el-form-item :label="$t('message.name')">
+                      <el-input v-model="formLabelAlign.name" :placeholder="$t('message.name')"></el-input>
                   </el-form-item>
               </el-col>
               <el-col :span="8">
-                  <el-form-item label="活动区域">
-                      <el-input v-model="formLabelAlign.region"></el-input>
+                  <el-form-item :label="$t('message.activeZone')">
+                      <el-input v-model="formLabelAlign.region" :placeholder="$t('message.activeZone')"></el-input>
                   </el-form-item>
               </el-col>
               <el-col :span="8">
-                  <el-form-item label="活动形式">
-                      <el-input v-model="formLabelAlign.type"></el-input>
+                  <el-form-item :label="$t('message.activeStyle')">
+                      <el-input v-model="formLabelAlign.type" :placeholder="$t('message.activeStyle')"></el-input>
                   </el-form-item>
               </el-col>
           </el-row>
           <el-row class="row-bg">
             <el-col :span="8">
-                <el-form-item label="活动范围1">
+                <el-form-item :label="$t('message.activeAmount')">
                   <el-select
                   v-model="formLabelAlign.regionZone"
                   placeholder="请选择活动区域"
@@ -40,7 +40,7 @@
           </el-row>
           <el-row>
             <el-col :span="6">
-              <el-button type="primary" @click.native.prevent="_submit">提交</el-button>
+              <el-button type="primary" @click.native.prevent="_submit">{{$t('message.submit')}}</el-button>
             </el-col>
           </el-row>
       </el-form>
@@ -75,11 +75,11 @@ export default {
       activeZoneData:[
         {
           value:'shanghai',
-          label:'区域一'
+          label:this.$t('message.zoneOne')
         },
         {
           value:'beijing',
-          label:'区域二'
+          label:this.$t('message.zoneTwo')
         }
       ]
     };
@@ -88,6 +88,7 @@ export default {
     console.log('创建前状态'); 
    },
   methods: {
+    // 点击提交
     _submit() {
       console.log(this.formLabelAlign);
       this.tools.$emit('tips',{show:true,title:'提交成功'})

@@ -3,7 +3,9 @@
         <userForm message="hello" @childClose="childClose"></userForm>
          <el-row>
             <el-col :span="6">
-                 <el-button type="primary" @click.native.prevent="_submit">获取数据</el-button>
+                 <el-button type="primary" @click.native.prevent="_submit">
+                    <span v-html="$t('message.data')"></span>
+                  </el-button>
          </el-col>
           </el-row>
     </div>
