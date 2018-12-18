@@ -14,6 +14,7 @@ const en = {
         'userDetile':'userDetile',
         'userGroupe':'userGroupe',
         'userSubmit':'userSubmit',
+        'getDataBtn':'search'
     }
 }
 

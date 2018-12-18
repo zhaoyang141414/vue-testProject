@@ -15,6 +15,7 @@ const cn = {
         'userDetile':'用户详情',
         'userGroupe':'用户组',
         'userSubmit':'用户提交',
+        'getDataBtn':'查询'
     }
 }
 
