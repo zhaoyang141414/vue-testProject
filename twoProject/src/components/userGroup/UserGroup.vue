@@ -91,7 +91,8 @@ export default {
   methods: {
     // 点击提交
     _submit() {
-      console.log(this.formLabelAlign);
+      // 测试jquery是否引用成功
+      console.log(this.formLabelAlign,$('.row-bg'));
       this.tools.$emit("tips", { show: true, title: "提交成功" });
     },
     // axious 测试获取数据

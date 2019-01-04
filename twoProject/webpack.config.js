@@ -79,6 +79,10 @@ module.exports = {
       {
         test: /\.(woff|svg|eot|ttf)\??.*$/,
         loader: 'url-loader'
+      },
+      {
+        test:require.resolve('jquery'), //配置解决npm中的jquery
+        loader: 'expose-loader?$!expose-loader?jQuery', // 先把jquery对象声明成为全局变量'jquery',再通过管道声明进一步为全局变量
       }
     ]
   },
@@ -104,6 +108,13 @@ module.exports = {
     //   filename:'[name].bundle.js',
     //   // minChunks:3 //公共代码的判断标准,某个js模块被多少chunk加载才算是公共代码 
     // }),
+    // ProvidePlugin标识当webpack加载到某个jS模块里，那么webpack就会自动引入jquery
+    new webpack.ProvidePlugin({
+      $:'jquery',
+      jQuery:'jquery',
+      'window.jQuery':'jquery',
+      'window.$':'jquery',
+    })
   ],
   resolve: {
     alias: {

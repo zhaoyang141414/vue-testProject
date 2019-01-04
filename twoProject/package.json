@@ -12,6 +12,8 @@
   "dependencies": {
     "axios": "^0.18.0",
     "element-ui": "^2.4.11",
+    "expose-loader": "^0.7.5",
+    "jquery": "^3.3.1",
     "vue": "^2.5.17",
     "vue-i18n": "^8.4.0",
     "vue-router": "^3.0.1",
