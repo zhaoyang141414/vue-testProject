@@ -1,15 +1,19 @@
 var path = require('path')
 var webpack = require('webpack')
+const packagejson = require('./package.json')
 // 打包后生成html文件，并插入指定的js和相关指定文件
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
-  entry: './src/main.js',
+  entry: {
+    main:'./src/main.js',
+    vendor:Object.keys(packagejson.dependencies),
+  },
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/',
-    filename: 'build.js',
+    filename: '[name].js',
     library:'window',
     // assetsPublicPath:'./' 
   },
@@ -89,7 +93,17 @@ module.exports = {
     new CopyWebpackPlugin([{
       from: './test.js',
       // to: './config'
-    }])
+    }]),
+    new webpack.optimize.CommonsChunkPlugin({
+      name:['vendor','runtime'],
+      filename:'[name].js',
+    }),
+// 这段代码是抽离多个公用组件被用的common.js代码打包
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name:'common',
+    //   filename:'[name].bundle.js',
+    //   // minChunks:3 //公共代码的判断标准,某个js模块被多少chunk加载才算是公共代码 
+    // }),
   ],
   resolve: {
     alias: {
